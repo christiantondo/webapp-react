@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Header() {
 
     return (
-        <header>
+        <header className="header">
             <Link to="/">Homepage</Link>
             <Link to="/movies">Movies</Link>
         </header>

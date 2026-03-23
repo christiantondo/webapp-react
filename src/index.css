@@ -12,9 +12,16 @@ body {
 
 a {
     text-decoration: none;
-    color: aqua;
+    color: rgb(255, 37, 8);
 }
 
 .page {
     padding: 1rem;
+}
+
+.header {
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    background-color: rgb(44, 44, 44);
 }
