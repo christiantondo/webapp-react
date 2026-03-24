@@ -29,3 +29,16 @@ a:hover {
     display: flex;
     background-color: rgb(44, 44, 44);
 }
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem
+}
+
+.card {
+    width: 20rem;
+    background: rgb(44, 44, 44);
+    padding: 1rem;
+    border-radius: 10px;
+}
