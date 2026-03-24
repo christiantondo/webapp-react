@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 
-function MovieCard() {
+function MovieCard({ movie }) {
+
+	const { id, title, director, abstract, image } = movie;
 
 	return <div className="card">
-		<h2>Title</h2>
-		<h3>Director</h3>
-		<p>Abstract</p>
-		<Link to={`/movies/1`}>Other details</Link>
+		<img src={image} alt={title} />
+		<h2>{title}</h2>
+		<h3>{director}</h3>
+		<p>{abstract}</p>
+		<Link to={`/movies/${id}`}>Other details</Link>
 	</div>
 
 }
