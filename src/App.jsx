@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
-import MoviePage from '../pages/MoviePage';
-import MoviesPage from "../pages/MoviesPage"
-import NotFoundPage from '../pages/NotFoundPage';
-import DefaultLayout from "./layouts/DefaultLayout";
+import HomePage from './pages/HomePage';
+import MoviePage from './pages/MoviePage';
+import MoviesPage from './pages/MoviesPage'
+import NotFoundPage from './pages/NotFoundPage';
+import DefaultLayout from './layouts/DefaultLayout';
 
 function App() {
     // const [state, setState] = useState(0)
