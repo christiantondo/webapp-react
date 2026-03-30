@@ -1,25 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
 import axios from "axios";
 
 function MoviesPage() {
 
-	const moviePlaceHolder = {
-		id: 99,
-		title: "Blank",
-		director: "Mike",
-		abstract: "Lorem ipsum dolor sit amet",
-		image: "/directory/x.jpg"
-	};
-
-	const movies = [
-		moviePlaceHolder,
-		moviePlaceHolder
-	];
+	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
 		axios.get("http://localhost:3000/api/movies").then(res => {
 			console.log(res.data);
+			setMovies(res.data);
 		}).catch(err =>
 			console.error("Ops...", err.message));
 	}, []);
