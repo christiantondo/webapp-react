@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import ReviewCard from "../components/ReviewCard";
+import RatingStars from "../components/RatingStars";
 
 function MoviePage() {
 
@@ -10,7 +11,8 @@ function MoviePage() {
     const [movie, setMovie] = useState({
         title: "",
         abstract: "",
-        reviews: []
+        reviews: [],
+        average_review: ""
     });
 
     useEffect(() => {
@@ -28,6 +30,7 @@ function MoviePage() {
     return <>
         <Link to="/movies">Go back to full list</Link>
         <h1>{movie.title}</h1>
+        <div>Average vote: <RatingStars vote={movie.average_review} /></div>
         <p>{movie.abstract}</p>
 
         <div className="cards-container">
