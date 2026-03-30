@@ -4,7 +4,13 @@ function ReviewCard({ review }) {
 
     return <div className="card">
         <h2>{name}</h2>
-        <h3>{vote}</h3>
+
+        <div>
+            {[1, 2, 3, 4, 5].map((n, i) => {
+                return <i key={i} className={"fa-star " + (vote >= n ? "fa-solid" : "fa-regular")}></i>
+            })}
+        </div>
+
         <p>{text}</p>
     </div>
 
