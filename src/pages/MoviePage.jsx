@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import ReviewCard from "../components/ReviewCard";
 import RatingStars from "../components/RatingStars";
+import ReviewForm from "../components/ReviewForm";
 
 function MoviePage() {
 
@@ -36,6 +37,8 @@ function MoviePage() {
         <div className="cards-container">
             {movie.reviews.map(review => <ReviewCard key={review.id} review={review} />)}
         </div>
+
+        <ReviewForm movieId={movie.id} />
     </>
 }
 
