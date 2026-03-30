@@ -22,7 +22,8 @@ function MoviePage() {
             setMovie(res.data);
         }).catch(err =>
             console.error("Ops...", err.message));
-    }, []);
+
+    }, [id]);
 
     return <>
         <Link to="/movies">Go back to full list</Link>
