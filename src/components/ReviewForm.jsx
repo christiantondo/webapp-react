@@ -4,7 +4,12 @@ import axios from "axios";
 function ReviewForm(props) {
 
     const movieId = props.movieId;
+    const reloadMovieData = props.onNewReview;
     const apiUrl = `http://localhost:3000/api/movies/${movieId}/reviews`;
+
+    const initalValues = { name: "", text: "", vote: 1 };
+    const [formData, setFormData] = useState(initalValues);
+
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -12,11 +17,15 @@ function ReviewForm(props) {
 
         axios.post(apiUrl, formData).then(results => {
             if (results.data.id) {
+                setFormData(initalValues);
+                reloadMovieData();
                 console.log('ok');
             } else {
                 console.log('ko');
             }
-        }).catch(err => console.log);
+        }).catch(err => {
+            console.error('Ops...', err.message)
+        });
     }
 
     function setFieldValue(e) {
@@ -29,9 +38,6 @@ function ReviewForm(props) {
 
         setFormData(newFormData);
     }
-
-    const initalValues = { name: "", text: "", vote: 1 };
-    const [formData, setFormData] = useState(initalValues);
 
     return <div>
 
