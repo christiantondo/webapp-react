@@ -19,7 +19,7 @@ function MoviesPage() {
 		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit, unde!</p>
 
 		<div className="cards-container">
-			{movies.map(movie => <MovieCard movie={movie} />)}
+			{movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
 		</div>
 	</>
 }
